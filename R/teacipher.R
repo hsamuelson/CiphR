@@ -8,6 +8,9 @@
 #'v0.n <- results[1:32]
 #'v1.n <- results[33:64]
 #'TinyDecrypt(v0.n, v1.n)
+if (!require("compositions")) install.packages("compositions")
+if (!require("magrittr")) install.packages("magrittr")
+
 
 library(compositions)
 library(gmp)

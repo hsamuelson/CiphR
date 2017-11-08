@@ -6,6 +6,9 @@
 #' @examples
 #' RSA.Decrypt(RSA.Encrypt(2198, publicKey = publicKey), privateKey = privateKey)
 
+if (!require("numbers")) install.packages("numbers")
+if (!require("gmp")) install.packages("gmp")
+
 library(numbers)
 library(gmp)
 RSAkeyGen <- function(
