@@ -50,11 +50,15 @@ RSAkeyGen <- function(
 message <- 1234 #Up to four digits if more the program breaks
 
 RSA.Encrypt <- function(message, publicKey) {
+  library(numbers)
+  library(gmp)
   n1 <- publicKey[[1]]
   e1 <- publicKey[[2]]
   return(as.integer(mod.bigz(as.bigz(pow.bigz(message, e1)), n1)))
 }
 RSA.Decrypt <- function(message.Rescived, privateKey){
+  library(numbers)
+  library(gmp)
   n1 <- privateKey[[1]]
   d1 <- privateKey[[2]]
   return(as.integer(mod.bigz(as.bigz(pow.bigz(message.Rescived, d1)), n1)))

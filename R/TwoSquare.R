@@ -147,7 +147,7 @@ TwoSquare.encrypt <- function(message, key1, key2){
     }
     #print(encryptMessage)
   }
-  print("Printing encrypted message")
+  print("Printing message")
   print(encryptMessage)
 
 }
@@ -156,7 +156,7 @@ TwoSquare.encrypt <- function(message, key1, key2){
 
 #decrypt
 #the functions are actually the same if you encrypt twice you decrypt
-TwoSquare.decrypt <- function(num1, num2, message){
-  TwoSquare.encrypt(num1, num2, message)
-}
+#TwoSquare.encrypt("DoZa went to the store", "axc", "poa")
+#the output put back in
+#TwoSquare.encrypt("docx fv nt to th qg to fq", "axc", "poa")
 
