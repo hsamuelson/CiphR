@@ -17,6 +17,10 @@ library(magrittr)
 
 #takes string
 BINARY <- function(xx) {  #NEEDS TO RETURN exactly 32 regardless, should remove from front
+  library(compositions)
+  library(gmp)
+  library(magrittr)
+
   numberIN <- as.double(strsplit(xx, "")[[1]])
   if(length(numberIN) > 32){
     while(length(numberIN) > 32){
@@ -33,6 +37,10 @@ BITTONUM <- function(xx) { #FIX ME !?!?!?!??!? WHY DOES 0^0 = 1!?!?!??!
   #for(i in 1:length(xx)){
   #  if(xx[i] == 1) { xx[i] <- 2}
   #}
+  library(compositions)
+  library(gmp)
+  library(magrittr)
+
   xx <- xx * 2
   #print((length(xx) - 1):0)
   #if(xx[length(xx)] == 2){ xx[length(xx)] <- 1}
@@ -74,6 +82,10 @@ BITXOR <- function(xx, yy){
 
 #NOt finished
 NOBINARY <- function(xx){
+  library(compositions)
+  library(gmp)
+  library(magrittr)
+
   bitstring <- numeric()
   counter <- 1
   number <- as.bigz(paste0(asd, collapse = ""))
@@ -98,6 +110,10 @@ vq <- BINARY("10101010101010101010101010101010")
 vw <- BINARY("11011011011011011011011011011011")
 
 TinyEncrypt <- function(v0, v1){
+  library(compositions)
+  library(gmp)
+  library(magrittr)
+
   sum <- 0
   delta <- 0x9e3779b9
 
@@ -110,6 +126,10 @@ TinyEncrypt <- function(v0, v1){
 }
 
 TinyDecrypt <- function(v0, v1){
+  library(compositions)
+  library(gmp)
+  library(magrittr)
+
   sum <- 0xC6EF3720
   delta <- 0x9e3779b9
 
@@ -123,48 +143,3 @@ TinyDecrypt <- function(v0, v1){
 
 
 
-
-#Code Graveyard
-
-#0x9e3779b9
-# for(i in 1:32){
-#   sum = sum + delta
-#   v0 <- v0 + (bitwXor(bitwXor(bitwShiftL(v1, 4), (v1 + sum)), (bitwShiftR(v1, 5)) ))
-#   v1 <- v1 + (bitwXor(bitwXor(bitwShiftL(v0, 4), (v0 + sum)), (bitwShiftR(v0, 5)) ))
-#   print(v0)
-#   print(v1)
-# }
-# # k0 <- 0
-#
-# v.0 <- "10101010101010101010101010101010"
-# v.0 <- "10101010101010101010101010101010000"
-#
-# v_1 <- as.bigz("11011011011011011011011011011011")
-#
-# v0.n <- 2863311530
-# v1.n <- 3681400539
-#
-#
-# v0 <- 1234
-# v1 <- 4321
-#
-#
-# #Encrypt
-# #TinyEncrypt <- function(v0, v1, k){
-# sum <- 0
-# delta <- 1 #0x9e3779b9
-#   for(i in 1:32){
-#     sum = sum + delta
-#     v0 <- v0 + (bitwXor(bitwXor(bitwShiftL(v1, 4), (v1 + sum)), (bitwShiftR(v1, 5)) ))
-#     v1 <- v1 + (bitwXor(bitwXor(bitwShiftL(v0, 4), (v0 + sum)), (bitwShiftR(v0, 5)) ))
-#     print(v0)
-#     print(v1)
-#   }
-#   #return(cbind(v0, v1))
-# #}
-#
-# #x <- c(1,0,1)
-# for(i in 1:length(x)){
-#   if(x[i] == 1) { x[i] <- 2}
-# }
-# sum(x^((length(x) -1):0))
