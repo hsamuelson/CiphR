@@ -11,6 +11,8 @@ library(gmp)
 RSAkeyGen <- function(
   p = 61,
   q = 53) {
+  library(numbers)
+  library(gmp)
   n = q*p
   #n
   totient <- LCM(q-1, p-1)
