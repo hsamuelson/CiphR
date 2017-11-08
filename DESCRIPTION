@@ -1,11 +1,10 @@
 Package: ciphr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Ciphr is a Collection of Ciphers for the R-Programming Language
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Henry Samuelson
+Maintainer: Henry Samuelson <hsamuelson@eastsideprep.org>
+Description: This library is a collection of algos 
+License: MIT
 Encoding: UTF-8
 LazyData: true
