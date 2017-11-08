@@ -32,7 +32,7 @@ TinyDecrypt(v0.n, v1.n)
 #the functions are actually the same if you encrypt twice you decrypt
 TwoSquare.encrypt("DoZa went to the store", "axc", "poa")
 #the output put back in
-TwoSquare.encrypt("docx fv nt to th qg to fq", "axc", "poa")
+TwoSquare.encrypt("xcwcvfntqcthgqqcqf", "axc", "poa")
 ```
 ### vienere Cipher
 ```
