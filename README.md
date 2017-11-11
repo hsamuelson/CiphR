@@ -1,6 +1,6 @@
 # CiphR
-## Ciphr is a Collection of Ciphers for The R-Programming Language
-Ciphr was created for a Independent Study on Cyber Security and Encryption, with a focus on Encrytion algorithms. Ciphr is the culminating product of the course.
+## Ciphr is a simple encryption library for the R-Programming Language
+CiphR was created for an Independent Study on Cyber Security and Encryption, with a focus on Encryption algorithms. CiphR hopes to provide a library which allows students to learn how ciphers and encryption algorithms work.
 ## Installation:
 If you dont have devtools already: <br>
 ```
@@ -10,7 +10,7 @@ Then use devtools to install Ciphr
 ```
 install_github("ciphr", "hsamuelson")
 ```
-After installation initilize the library using `library(ciphr)`
+After installation initialize the library using `library(ciphr)`
 
 ## Commands & Usage 
 ### RSA 
@@ -29,7 +29,7 @@ tiny.Decrypt(v0.n, v1.n)
 ```
 ### Two Square Cipher
 ```
-#the functions are actually the same if you encrypt twice you decrypt
+#The functions are the same if you encrypt twice you decrypt
 TwoSquare.Encrypt("Doza went to the store", "axc", "poa")
 #the output put back in
 TwoSquare.Encrypt("xcwcvfntqcthgqqcqf", "axc", "poa")
