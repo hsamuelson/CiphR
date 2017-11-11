@@ -1,17 +1,17 @@
 #
 #Henry Samuelson
 #
-#vienere Cipher
+#Vigenère Cipher 10/10/17
 #
 
 #' @examples
 #' message <- "helloizyx"
 #' key <- "zyaa"
-#' VinereDecrypt(VienereEncrypt(message, key), key)
+#' Vigenere.Decrypt(Vigenere.Encrypt(message, key), key)
 
 
 
-chr <- function(n) {
+chr <- function(n) { #Converts and sequences numbers and returns letters
   final <- character()
   for(i in 1:length(n)){
     if(n[i] != 0){
@@ -32,24 +32,25 @@ chr <- function(n) {
 
 asc <- function(x) { strtoi(charToRaw(x),16L) -96 } #to numeric
 
-VienereEncrypt <- function(message, key){
+Vigenere.Encrypt <- function(message, key){
+  message <- tolower(message) #make sure message is lower case
   numbers <- asc(message)
   key <- asc(key)
 
-  options(warn=-1) #this throughs an invalid error
-  encryptedMessage <- (key + numbers)#%%26
-  #options(warn = 0)
+  options(warn=-1) #this throws an invalid error so we supress the error
+  encryptedMessage <- (key + numbers)
 
   return(chr(encryptedMessage))
   options(warn = 0)
 }
 
-VinereDecrypt <- function(message, key){
+Vigenere.Decrypt <- function(message, key){
+  message <- tolower(message)
   numbers <- asc(message)
   key <- asc(key)
 
   options(warn=-1) #this throughs an invalid error
-  encryptedMessage <- (numbers - key)%%26
+  encryptedMessage <- (numbers - key)%%26 #Do the opposite and subtract the keys
   #options(warn = 0)
 
   return(chr(encryptedMessage))

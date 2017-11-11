@@ -1,5 +1,5 @@
 #
-# Henry Samuelson
+# Henry Samuelson 09/20/17
 #
 #Auto Key Cipher
 #
@@ -20,8 +20,8 @@
 
 
 asc <- function(x) { strtoi(charToRaw(x),16L) -96 } #to numeric
-#chr <- function(n) { rawToChar(as.raw(n + 96))} #to charaters
-chr <- function(n) {
+
+chr <- function(n) { #Same function used for the Viengere Cipher
   final <- character()
   for(i in 1:length(n)){
     if(n[i] != 0){
@@ -40,7 +40,7 @@ chr <- function(n) {
 } #to charaters
 
 
-autoEncrypt <- function(message, key){
+auto.Encrypt <- function(message, key){
   numbers <- asc(message)
   key <- asc(key)
   key <- c(key, numbers)
@@ -52,11 +52,13 @@ autoEncrypt <- function(message, key){
 }
 
 
-autoDecrypt <- function(message, key){
+auto.Decrypt <- function(message, key){
   numbers <- asc(message)
   key <- asc(key)
-  #key <- c(key, numbers) #The key difference from the viegnere is here
 
+  #In order to decrypt one cannont repeat in a similar mannor to the Viginere Cipher because
+  #You do not know the letters of the decryption key excet the inital numbers of the encryption key
+  #So you need to recursivly decript the message.
   encryptedMessage <- numeric()
   for(i in 1:length(numbers)){
     encryptedMessage[i] <- (numbers[i] - key[i])%%26
