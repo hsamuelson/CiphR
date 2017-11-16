@@ -41,6 +41,7 @@ chr <- function(n) { #Same function used for the Viengere Cipher
 
 
 auto.Encrypt <- function(message, key){
+  message <- tolower(message) #make sure all numbers are lowercase
   numbers <- asc(message)
   key <- asc(key)
   key <- c(key, numbers)
@@ -53,6 +54,7 @@ auto.Encrypt <- function(message, key){
 
 
 auto.Decrypt <- function(message, key){
+  message <- tolower(message)
   numbers <- asc(message)
   key <- asc(key)
 
