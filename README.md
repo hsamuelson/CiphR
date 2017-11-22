@@ -1,5 +1,5 @@
 # CiphR
-## Ciphr is a simple encryption library for the R-Programming Language
+## CiphR is a simple encryption library for the R-Programming Language
 CiphR was created for an Independent Study on Cyber Security and Encryption, with a focus on Encryption algorithms. CiphR hopes to provide a library which allows students to learn how ciphers and encryption algorithms work.
 ## Installation:
 If you dont have devtools already: <br>
