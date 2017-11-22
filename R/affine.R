@@ -50,17 +50,18 @@ affine.Encrypt <- function(key.a = 3, key.b = 4, message){
   #use the mod equation described in the description to encrypt
   #E(x) = (ax +b)%%m
   #m being the number of letters in alphabet
-  return(((key.a * x) + key.b)%% 26)
+  return(chr(((key.a * x) + key.b)%% 26))
 }
 
 
 #Decrypt
 affine.Decrypt <- function(key.a = 3, key.b = 4, message){
   library(numbers)
+  message <- asc(message)
   #use the mod equation described in the description to encrypt
   #D(x) = a^-1*(x-b) %% m
   #m being the number of letters in alphabet
-  chr((modinv(key.a, 26) * (encryptedM - key.b))%%26)
+  chr((modinv(key.a, 26) * (message - key.b))%%26)
 }
 
 
