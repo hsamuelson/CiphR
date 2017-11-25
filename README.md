@@ -14,6 +14,11 @@ After installation initialize the library using `library(ciphr)`
 
 ## Commands & Usage 
 
+### Ceasar Cipher
+In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. 
+```
+ceasar.Decrypt(ceasar.Encrypt("helloworld", 13), 13)
+```
 ### Affine Cipher
  Discription (from wiki)
  The affine cipher is a type of monoalphabetic substitution cipher, wherein each letter
