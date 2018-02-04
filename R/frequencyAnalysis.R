@@ -26,10 +26,7 @@ chr <- function(n) { #Same function used for the Viengere Cipher
 } #to charaters
 
 ceasar.FrequencyAnalysis <- function(messageF){
-  splicedMessage <- strsplit(messageF, "")[[1]]
-  frequencyCount <- table(splicedMessage)
-  sortedTable <- sort(frequencyCount)
-
+  frequencyCount <- sort(table(strsplit(messageF, "")[[1]]))
   e <- tolower(names(sortedTable[length(sortedTable)]))
 
   #Shift forward until the letter is e
