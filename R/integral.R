@@ -32,21 +32,22 @@ chr <- function(n) { #Converts and sequences numbers and returns letters
 
 asc <- function(x) { strtoi(charToRaw(x),16L) -96 }
 
-f <- function(x){x^2} #choose a key
+f <- function(x){(sin(x)+1)*(x^2/(x + 1))} #choose a key
+
 
 intCrypt.Encrypt <- function(message, f){
   #message <- "hello world"
   message <- gsub(" ", "", message)
   message <- tolower(message)
   num_message <- asc(message)
-  #Total sum of message has to be less that the area under the full range.
+  #Total sum of message has to be leshs that the area under the full range.
   .range <- sum(num_message)
   no_range_cover <- T
   counter <- 1
   #find ideal range
   while(no_range_cover){
     if(counter > 1000){
-      print("Needs different key: Range to large")
+      return("Needs different key: Range to large")
     }
     if(integrate(f, 0, counter)$value > .range){
       no_range_cover <- F
@@ -55,7 +56,7 @@ intCrypt.Encrypt <- function(message, f){
     }
     counter = counter + 10
   }
-
+  print(counter)
   x <- seq(0,counter,0.001)
 
   #integrate(f, 0.5, asd)$value
@@ -70,6 +71,7 @@ intCrypt.Encrypt <- function(message, f){
       #print("1234")
       if(abs(inter - num_message[j]) < 0.05){
         encryptedM[j +1] <- x[i]
+        testholder <<- encryptedM
         #print(encryptedM)
         break()
       }
@@ -89,3 +91,4 @@ intCrypt.Decrypt <- function(encryptedM , f){ #f is the function/ key
   }
   return(chr(round(new_message)))
 }
+
