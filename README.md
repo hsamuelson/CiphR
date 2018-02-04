@@ -101,3 +101,8 @@ and is widely used for secure data transmission. In such a cryptosystem, the
 RSAkeyGen()
 RSA.Decrypt(RSA.Encrypt(2198, publicKey = publicKey), privateKey = privateKey)
 ```
+### Frequency Analysis 
+This function uses frequency analysis to crack ceasar Ciphers. Simply input encrypted text and it will return the decrypted message
+```
+ceasar.FrequencyAnalysis(ceasar.Encrypt("hellomynameisbobandiliketogotheparkandeatfoodbecasueithinkitisfun", 4))
+```
