@@ -24,19 +24,17 @@ chr <- function(n) { #Same function used for the Viengere Cipher
   }
   return(paste0(final, collapse = ""))
 } #to charaters
-ceasar.Encrypt <- function(message, shiftAmount){
-  chr(asc(message) + shiftAmount)
+
+ceasar.FrequencyAnalysis <- function(messageF){
+  splicedMessage <- strsplit(messageF, "")[[1]]
+  frequencyCount <- table(splicedMessage)
+  sortedTable <- sort(frequencyCount)
+
+  e <- tolower(names(sortedTable[length(sortedTable)]))
+
+  #Shift forward until the letter is e
+  return(ceasar.Decrypt(messageF, (asc(e) - 5)))
 }
-ceasar.Decrypt <- function(message, shiftAmount){
-  chr(asc(message) - shiftAmount)
-}
+#Example tests
+#ceasar.FrequencyAnalysis(ceasar.Encrypt("hellomynameishenryandiliektogotheparkandeatfoodbecasueithinkitisfun", 4))
 
-messagex <- ceasar.Encrypt("hellomynameishenryandiliektogotheparkandeatfoodbecasueithinkitisfun", 4)
-asd <- strsplit(messagex, "")[[1]]
-frequencyCount <- table(asd)
-sortedTable <- sort(frequencyCount)
-
-e <- tolower(names(sortedTable[length(sortedTable)]))
-
-#Shift forward until the letter is e
-ceasar.Decrypt(messagex, (asc(e) - 5))
