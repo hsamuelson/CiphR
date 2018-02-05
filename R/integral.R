@@ -32,7 +32,6 @@ chr <- function(n) { #Converts and sequences numbers and returns letters
 
 asc <- function(x) { strtoi(charToRaw(x),16L) -96 }
 
-f <- function(x){(sin(x)+1)*(x^2/(x + 1))} #choose a key
 
 
 intCrypt.Encrypt <- function(message, f){
