@@ -5,6 +5,8 @@ CiphR was created for an Independent Study on Cyber Security and Encryption, wit
 If you dont have devtools already: <br>
 ```
 install.packages("devtools")
+install.packages("robustbase")
+install.packages("compositions")
 ```
 Then use devtools to install Ciphr
 ```
