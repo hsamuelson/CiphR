@@ -1,5 +1,5 @@
 library(ciphr)
-asd <- intCrypt.Encrypt("hi there how are you doing today zap long sentence", function(x){x^2})
+asd <- intCrypt.Encrypt("hi there how are you doing today zap", function(x){x^2})
 #asd <- intCrypt.Encrypt("too small of a hight is a good thing while to much is dangerous", function(x){x})
 encryptMsg <- asd
 aa <- 1/encryptMsg
@@ -35,7 +35,7 @@ points(encryptMsg^2, type = "o", col = "brown", pch = 5)
 plot((zz- middleSplice) - (middleSplice - aa)) #interesting that hw far the aa and zz stray from eachothers error off the middleSplice looks exactly like regular plot
 
 
-chr(round(encryptMsg^2*spacing)) #modulos are handled in chr() func
+ciphr::chr(round(encryptMsg^2*spacing)) #modulos are handled in chr() func
 
 expo <- sum(spacing)/ length(spacing)
 plot(spacing)
